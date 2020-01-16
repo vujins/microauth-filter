@@ -2,6 +2,7 @@ package com.exelatech.authfilter.util;
 
 import java.security.KeyFactory;
 import java.security.NoSuchAlgorithmException;
+import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.X509EncodedKeySpec;
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Service;
  * KeyStore
  */
 @Service
-public class KeyStoreService {
+public class KeyStoreService implements KeyStore {
 
   private PublicKey key = null;
   private final String algorithm = "RSA";
@@ -36,8 +37,9 @@ public class KeyStoreService {
     return publicKey;
   }
 
-  public PublicKey getKey() {
-    
+  @Override
+  public PublicKey getPublicKey() {
+
     if (key != null) {
       return key;
     } else {
@@ -45,4 +47,8 @@ public class KeyStoreService {
     }
   }
 
+  @Override
+  public PrivateKey getPrivateKey() {
+    return null;
+  }
 }
