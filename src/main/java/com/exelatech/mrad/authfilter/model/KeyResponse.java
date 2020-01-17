@@ -1,4 +1,4 @@
-package com.exelatech.authfilter.model;
+package com.exelatech.mrad.authfilter.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

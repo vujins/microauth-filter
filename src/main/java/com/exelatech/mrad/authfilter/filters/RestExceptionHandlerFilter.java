@@ -1,4 +1,4 @@
-package com.exelatech.authfilter.filters;
+package com.exelatech.mrad.authfilter.filters;
 
 import java.io.IOException;
 import java.util.Date;
@@ -8,17 +8,19 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.exelatech.authfilter.exceptions.AuthFilterException;
-import com.exelatech.authfilter.model.ExceptionResponse;
+import com.exelatech.mrad.authfilter.exceptions.AuthFilterException;
+import com.exelatech.mrad.authfilter.model.ExceptionResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 /**
  * ExceptionHandlerFilter
  */
+@Component
 public class RestExceptionHandlerFilter extends OncePerRequestFilter {
 
   @Autowired
@@ -35,7 +37,7 @@ public class RestExceptionHandlerFilter extends OncePerRequestFilter {
       HttpStatus status = HttpStatus.FORBIDDEN;
 
       body.setStatus(status.value());
-      body.setError("Forbidden | Custom Error");
+      body.setError("Forbidden | Custom AuthFilter Error");
       body.setMessage(ex.getMessage());
       body.setPath(request.getRequestURI());
       body.setTimestamp(new Date().toString());

@@ -1,4 +1,4 @@
-package com.exelatech.authfilter.filters;
+package com.exelatech.mrad.authfilter.filters;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,9 +8,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.exelatech.authfilter.exceptions.AuthFilterException;
-import com.exelatech.authfilter.model.SimpleAuthority;
-import com.exelatech.authfilter.util.JWTUtilService;
+import com.exelatech.mrad.authfilter.exceptions.AuthFilterException;
+import com.exelatech.mrad.authfilter.model.SimpleAuthority;
+import com.exelatech.mrad.authfilter.util.JWTUtilService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -53,17 +53,15 @@ public class JWTAuthFilter extends OncePerRequestFilter {
           | IllegalArgumentException ex) {
         throw new AuthFilterException(ex.getMessage(), ex);
       }
-
-      if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(username, null,
-            authorities);
-        token.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-        SecurityContextHolder.getContext().setAuthentication(token);
-      }
-
-      filterChain.doFilter(request, response);
+    }
+    
+    if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+      UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(username, null, authorities);
+      token.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+      SecurityContextHolder.getContext().setAuthentication(token);
     }
 
+    filterChain.doFilter(request, response);
   }
 
 }

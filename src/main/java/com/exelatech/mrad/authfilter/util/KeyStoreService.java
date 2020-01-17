@@ -1,4 +1,4 @@
-package com.exelatech.authfilter.util;
+package com.exelatech.mrad.authfilter.util;
 
 import java.security.KeyFactory;
 import java.security.NoSuchAlgorithmException;
@@ -30,7 +30,6 @@ public class KeyStoreService implements KeyStore {
     try {
       publicKey = KeyFactory.getInstance(algorithm).generatePublic(new X509EncodedKeySpec(bytes));
     } catch (InvalidKeySpecException | NoSuchAlgorithmException e) {
-      // TODO Auto-generated catch block
       e.printStackTrace();
     }
 
@@ -43,7 +42,7 @@ public class KeyStoreService implements KeyStore {
     if (key != null) {
       return key;
     } else {
-      return getKeyFromAuthServer();
+      return key = getKeyFromAuthServer();
     }
   }
 

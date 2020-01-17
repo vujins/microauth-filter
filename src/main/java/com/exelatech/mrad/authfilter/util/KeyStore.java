@@ -1,4 +1,4 @@
-package com.exelatech.authfilter.util;
+package com.exelatech.mrad.authfilter.util;
 
 import java.security.PrivateKey;
 import java.security.PublicKey;

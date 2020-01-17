@@ -1,10 +1,10 @@
-package com.exelatech.authfilter.util;
+package com.exelatech.mrad.authfilter.util;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedHashMap;
 
-import com.exelatech.authfilter.model.SimpleAuthority;
+import com.exelatech.mrad.authfilter.model.SimpleAuthority;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
