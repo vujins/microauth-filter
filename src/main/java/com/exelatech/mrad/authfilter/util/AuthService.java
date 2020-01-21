@@ -15,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class AuthService {
 
-  private final String url = "http://localhost:9091/authenticate/key";
+  private final String url = "http://localhost:9091/authenticate/public";
 
   @Autowired
   private RestTemplateBuilder builder;

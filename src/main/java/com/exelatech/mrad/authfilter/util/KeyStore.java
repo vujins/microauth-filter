@@ -1,14 +1,13 @@
 package com.exelatech.mrad.authfilter.util;
 
-import java.security.PrivateKey;
-import java.security.PublicKey;
+import java.security.Key;
 
 /**
  * KeyStore
  */
 public interface KeyStore {
 
-  public PublicKey getPublicKey();
-  public PrivateKey getPrivateKey();
+  public Key getPublicKey();
+  public Key getPrivateKey();
   
 }
