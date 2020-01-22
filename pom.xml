@@ -8,10 +8,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.exelatech.mrad</groupId>
-	<artifactId>auth-filter</artifactId>
+	<artifactId>microauth-filter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
-	<description>Demo project for Spring Boot</description>
+	<name>microauth-filter</name>
+	<description>Microservice for JWT authorization</description>
 
 	<properties>
 		<java.version>11</java.version>
