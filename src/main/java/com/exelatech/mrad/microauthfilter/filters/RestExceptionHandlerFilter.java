@@ -1,4 +1,4 @@
-package com.exelatech.mrad.authfilter.filters;
+package com.exelatech.mrad.microauthfilter.filters;
 
 import java.io.IOException;
 import java.util.Date;
@@ -8,8 +8,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.exelatech.mrad.authfilter.exceptions.AuthFilterException;
-import com.exelatech.mrad.authfilter.model.ExceptionResponse;
+import com.exelatech.mrad.microauthfilter.exceptions.AuthFilterException;
+import com.exelatech.mrad.microauthfilter.model.ExceptionResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,7 @@
 
-package com.exelatech.mrad.authfilter.service;
+package com.exelatech.mrad.microauthfilter.service;
 
-import com.exelatech.mrad.authfilter.model.KeyResponse;
+import com.exelatech.mrad.microauthfilter.model.KeyResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;

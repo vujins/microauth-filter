@@ -1,4 +1,4 @@
-package com.exelatech.mrad.authfilter.model;
+package com.exelatech.mrad.microauthfilter.model;
 
 import org.springframework.security.core.GrantedAuthority;
 

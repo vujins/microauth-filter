@@ -1,4 +1,4 @@
-package com.exelatech.mrad.authfilter.exceptions;
+package com.exelatech.mrad.microauthfilter.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

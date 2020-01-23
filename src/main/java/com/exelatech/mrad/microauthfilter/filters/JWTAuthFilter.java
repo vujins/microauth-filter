@@ -1,4 +1,4 @@
-package com.exelatech.mrad.authfilter.filters;
+package com.exelatech.mrad.microauthfilter.filters;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,9 +8,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.exelatech.mrad.authfilter.exceptions.AuthFilterException;
-import com.exelatech.mrad.authfilter.model.SimpleAuthority;
-import com.exelatech.mrad.authfilter.service.JWTUtilService;
+import com.exelatech.mrad.microauthfilter.exceptions.AuthFilterException;
+import com.exelatech.mrad.microauthfilter.model.SimpleAuthority;
+import com.exelatech.mrad.microauthfilter.service.JWTUtilService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
