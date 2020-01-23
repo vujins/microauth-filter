@@ -1,4 +1,4 @@
-package com.exelatech.mrad.authfilter.util;
+package com.exelatech.mrad.authfilter.service;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -43,20 +43,28 @@ public class JWTUtilService {
     // ================================================
     // creation methods 
     // ================================================
-    private JwtBuilder getBuilderWithClaims(UserDetails userDetails) {
+    private JwtBuilder getBuilderWithClaims(UserDetails userDetails, String type, long duration) {
         return Jwts.builder()
-            .claim(Claims.ISSUER, "Auth Microservice")
+            .claim(Claims.ISSUER, "microauth")
             .claim(Claims.SUBJECT, userDetails.getUsername())
             .claim(AUTHORITIES, userDetails.getAuthorities())
             .setIssuedAt(new Date())
-            .setExpiration(new Date(System.currentTimeMillis() + 5 * YEAR))
-            .setHeaderParam(Header.TYPE, Header.JWT_TYPE);
+            .setExpiration(new Date(System.currentTimeMillis() + duration))
+            .setHeaderParam(Header.TYPE, type);
+    }
+
+    private String generateToken(UserDetails userDetails, String type, long duration) {
+        return getBuilderWithClaims(userDetails, type, duration)
+            .signWith(signatureAlgorithm, keyStore.getPrivateKey())
+            .compact();
+    }
+
+    public String generateRefresh(UserDetails userDetails) {
+        return generateToken(userDetails, "RFSH", YEAR);
     }
 
     public String generateJwt(UserDetails userDetails) {
-        return getBuilderWithClaims(userDetails)
-            .signWith(signatureAlgorithm, keyStore.getPrivateKey())
-            .compact();
+        return generateToken(userDetails, Header.JWT_TYPE, 5 * MINUTES);
     }
 
     // ================================================

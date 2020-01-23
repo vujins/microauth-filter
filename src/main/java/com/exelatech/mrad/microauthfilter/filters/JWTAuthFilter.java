@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.exelatech.mrad.authfilter.exceptions.AuthFilterException;
 import com.exelatech.mrad.authfilter.model.SimpleAuthority;
-import com.exelatech.mrad.authfilter.util.JWTUtilService;
+import com.exelatech.mrad.authfilter.service.JWTUtilService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

@@ -1,5 +1,5 @@
 
-package com.exelatech.mrad.authfilter.util;
+package com.exelatech.mrad.authfilter.service;
 
 import com.exelatech.mrad.authfilter.model.KeyResponse;
 
@@ -15,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class AuthService {
 
-  private final String url = "http://localhost:9091/authenticate/public";
+  private final String url = "http://localhost:9091/publickey";
 
   @Autowired
   private RestTemplateBuilder builder;

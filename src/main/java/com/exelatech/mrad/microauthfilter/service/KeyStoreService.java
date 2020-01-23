@@ -1,4 +1,4 @@
-package com.exelatech.mrad.authfilter.util;
+package com.exelatech.mrad.authfilter.service;
 
 import java.security.KeyFactory;
 import java.security.NoSuchAlgorithmException;
